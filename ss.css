@@ -1,12 +1,173 @@
+.input-container {
+    display: flex;
+    align-items: center;
+    max-width: 300px; /* Adjust the width as needed */
+    margin: 20px auto; /* Center the container and provide spacing */
+  }
+  
+  /* Email Input Styles */
+  .email-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+  }
+  
+  /* Submit Button Styles */
+  .submit-button {
+    background-color: #743fc7;
+    padding: 10px 15px;
+    color: #fff;
+    border: 1px solid #743fc7;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+    cursor: pointer;
+    transition: box-shadow 0.8s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #743fc7;
+    border-color: #4a9ed1;
+    /* box-shadow: 0 0 20px rgba(83, 57, 57, 0.5); */
+    box-shadow: 0px 10px 10px -5px rgba(123, 95, 95, 0.5);
+  }
+
+
+
+.logo-col{
+    color: #ffffff;
+}
+
+
+
+
+
+/* Reset some default styling */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+    color: #fff; 
+    transition: background-color 0.3s ease;
+    z-index: 1000;  
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar i {
+  font-size: 1.875rem; /* Equivalent to text-3xl in Tailwind */
+  font-weight: bold;
+}
+
+.nav-links {
+  display: inline-flex;
+  gap: 1rem; /* Equivalent to gap-4 in Tailwind */
+  margin-left: 2.5rem; /* Equivalent to ml-10 in Tailwind */
+}
+
+.nav-links a:hover {
+  color: #ccc; /* Equivalent to hover:text-gray-300 in Tailwind */
+}
+
+/* Search and user actions */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 in Tailwind */
+  border: none;
+  border-radius: 0.375rem; /* Equivalent to rounded in Tailwind */
+  background-color: #2d3748; /* Equivalent to bg-gray-800 in Tailwind */
+  color: #fff;
+  outline: none; /* Equivalent to focus:outline-none in Tailwind */
+}
+
+.sign-in-btn {
+  background-color: #3490dc; /* Equivalent to bg-blue-600 in Tailwind */
+  color: #fff;
+  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 in Tailwind */
+  border-radius: 0.375rem; /* Equivalent to rounded in Tailwind */
+}
+
+.sign-in-btn:hover {
+  background-color: #4a9ed1; /* Equivalent to hover:bg-blue-700 in Tailwind */
+}
+
+.sign-up-btn {
+  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 in Tailwind */
+  border-radius: 0.375rem; /* Equivalent to rounded in Tailwind */
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px; 
+  white-space: nowrap;
+  margin-left: -9rem;
+}
+
+.sign-up-btn:hover {
+  border-color: #83888b; /* Equivalent to hover:border-blue-700 in Tailwind */
+  color: #83888b; /* Equivalent to hover:text-blue-700 in Tailwind */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////// */
 .h-container {
     text-align: center;
     padding: 0 2rem;
+    background-image: url('./img/p.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust the height to cover the entire viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    position: relative;
 }
 
 .h-heading {
     font-size: 3rem;
     font-weight: bold;
     margin-top: 2rem;
+    color: #ffffff;
 }
 .h-paragraph {
     font-size: 1.5rem;
@@ -14,9 +175,9 @@
 }
 
 .h-form {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* gap: 1rem; */
     margin-top: 2rem;
 }
 
