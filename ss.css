@@ -1,67 +1,82 @@
 .input-container {
     display: flex;
     align-items: center;
-    max-width: 300px; /* Adjust the width as needed */
-    margin: 20px auto; /* Center the container and provide spacing */
+    max-width: 300px; 
+    margin: 20px auto; 
   }
   
-  /* Email Input Styles */
+
   .email-input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+    border-radius: 5px 0 0 5px;
   }
   
-  /* Submit Button Styles */
+ 
   .submit-button {
-    background-color: #743fc7;
+    background-color: #eb0000;
     padding: 10px 15px;
     color: #fff;
-    border: 1px solid #743fc7;
-    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+    border: 1px solid #eb0000;
+    border-radius: 0 5px 5px 0; 
     cursor: pointer;
     transition: box-shadow 0.8s ease;
+    font-weight: 600;
   }
   
   .submit-button:hover {
-    background-color: #743fc7;
+    background-color: #eb0000;
     border-color: #4a9ed1;
-    /* box-shadow: 0 0 20px rgba(83, 57, 57, 0.5); */
     box-shadow: 0px 10px 10px -5px rgba(123, 95, 95, 0.5);
   }
 
 
 
-.logo-col{
-    color: #ffffff;
+.logo-img{
+  height: 42px;
+  width: 48px;
+  position: relative;
+  top: -3px;
+  left: -7px;
+  bottom: 0px;
+}
+.logo{
+  width: 36px;
+  position: relative;
+  border-radius: 50%;
+  background: white;
+  height: 36px;
 }
 
 
 
 
 
-/* Reset some default styling */
+
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
-/* Navigation Bar Styles */
+
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 96vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 16px;
     background-color: transparent;
     color: #fff; 
     transition: background-color 0.3s ease;
     z-index: 1000;  
+    margin: auto;
 }
 
 
@@ -71,21 +86,21 @@ body, h1, h2, p, ul, li {
 }
 
 .navbar i {
-  font-size: 1.875rem; /* Equivalent to text-3xl in Tailwind */
+  font-size: 1.875rem;
   font-weight: bold;
 }
 
 .nav-links {
   display: inline-flex;
-  gap: 1rem; /* Equivalent to gap-4 in Tailwind */
-  margin-left: 2.5rem; /* Equivalent to ml-10 in Tailwind */
+  gap: 1rem; 
+
 }
 
 .nav-links a:hover {
-  color: #ccc; /* Equivalent to hover:text-gray-300 in Tailwind */
+  color: #ccc; 
 }
 
-/* Search and user actions */
+
 .user-actions {
   display: flex;
   align-items: center;
@@ -93,44 +108,45 @@ body, h1, h2, p, ul, li {
 }
 
 .search-input {
-  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 in Tailwind */
+  padding: 0.5rem 1rem; 
   border: none;
-  border-radius: 0.375rem; /* Equivalent to rounded in Tailwind */
-  background-color: #2d3748; /* Equivalent to bg-gray-800 in Tailwind */
+  border-radius: 0.375rem; 
+  background-color: #2d3748; 
   color: #fff;
-  outline: none; /* Equivalent to focus:outline-none in Tailwind */
+  outline: none; 
 }
 
 .sign-in-btn {
-  background-color: #3490dc; /* Equivalent to bg-blue-600 in Tailwind */
+  background-color: #3490dc; 
   color: #fff;
-  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 in Tailwind */
-  border-radius: 0.375rem; /* Equivalent to rounded in Tailwind */
+  padding: 0.5rem 1rem; 
+  border-radius: 0.375rem; 
 }
 
 .sign-in-btn:hover {
-  background-color: #4a9ed1; /* Equivalent to hover:bg-blue-700 in Tailwind */
+  background-color: #4a9ed1; 
 }
 
 .sign-up-btn {
-  padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 in Tailwind */
-  border-radius: 0.375rem; /* Equivalent to rounded in Tailwind */
+
+  border-radius:6px; 
   display: inline-block;
-  padding: 10px 20px;
+  padding: 6px 18px;
   border: 1px solid #ffffff;
-  background-color: transparent;
   color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
+  background-color: transparent;
   font-weight: bold;
   font-size: 16px; 
   white-space: nowrap;
-  margin-left: -9rem;
+ 
+  transition: all 0.1s;
 }
 
 .sign-up-btn:hover {
-  border-color: #83888b; /* Equivalent to hover:border-blue-700 in Tailwind */
-  color: #83888b; /* Equivalent to hover:text-blue-700 in Tailwind */
+  /* border-color: #eb0000;  */
+  background-color: #eb0000;
+  color: #ffffff; 
+  transition: all 0.1s;
 }
 
 
@@ -161,6 +177,7 @@ body, h1, h2, p, ul, li {
     justify-content: center;
     padding-top: 60px;
     position: relative;
+    margin-top: -74px;
 }
 
 .h-heading {
