@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
     <!-- Logo and navigation -->
     <div style="align-items: center; display: flex; gap: 20px;">
       <a href="#" class="logo"> <img src="logo.svg" class="logo-img" alt="Logo" ></i></a>
@@ -78,9 +78,10 @@
 
   </section>
 
-  <div class="conainer-fluid mb-4 " id="S2">
-    <section class="row justify-content-evenly" >
-      <div class="col-7 row p-5 box-shadow  rounded-4 f-colour ">
+  <div class="conainer-fluid mb-4" id="S2" style="height:100vh; padding-top:6%;"  >
+    <section class="row justify-content-evenly m-2" >
+      
+      <div class="col-7 row p-5  box-shadow  rounded-4 f-colour ">
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
                   <img src="./img/download-removebg-preview.png" alt="Placeholder image for React logo"
@@ -102,7 +103,7 @@
           </div>
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
-                  <img src="./img/download-removebg-preview.png" alt="Placeholder image for Vue.js logo"
+                  <img src="./img/next.png" alt="Placeholder image for Vue.js logo"
                       class="f-logo-image">
               </div>
           </div>
@@ -151,8 +152,9 @@
     </section>
   </div>
 
-  <!-- <div class="conainer-fluid mb-4" id="S3">
-    <section class="row justify-content-evenly">
+
+  <div class="conainer-fluid mb-4" id="S3" style="height:100vh; padding-top:10%;">
+    <section class="row justify-content-evenly m-1">
       
       <div class="col-4 box-shadow rounded-4 text-white f-colour">
           <div class="custom-column">
@@ -230,9 +232,22 @@
         </div>
     </div>
     </section>
-  </div> -->
+  </div>
 
  
+
+  <script>
+    window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+  
+    // Add or remove the "scrolled" class based on the scroll position
+    if (window.scrollY > 0) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  </script>
 
 </body>
 </html>
