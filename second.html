@@ -79,8 +79,7 @@
   </section>
 
   <div class="conainer-fluid mb-4" id="S2" style="height:100vh; padding-top:6%;"  >
-    <section class="row justify-content-evenly m-2" >
-      
+    <section class="row justify-content-evenly m-2" > 
       <div class="col-7 row p-5  box-shadow  rounded-4 f-colour ">
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
@@ -109,25 +108,25 @@
           </div>
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
-                  <img src="./img/download-removebg-preview.png" alt="Placeholder image for Svelte logo"
+                  <img src="./img/vite.png" alt="Placeholder image for Svelte logo"
                       class="f-logo-image">
               </div>
           </div>
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
-                  <img src="./img/download-removebg-preview.png" alt="Placeholder image for Flutter logo"
+                  <img src="./img/flutter.png" alt="Placeholder image for Flutter logo"
                       class="f-logo-image">
               </div>
           </div>
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
-                  <img src="./img/download-removebg-preview.png" alt="Placeholder image for Go logo"
+                  <img src="./img/py.png" alt="Placeholder image for Go logo"
                       class="f-logo-image">
               </div>
           </div>
           <div class="col-2 f-logo-item">
               <div class="f-logo-content">
-                  <img src="./img/download-removebg-preview.png" alt="Placeholder image for Python logo"
+                  <img src="./img/go.png" alt="Placeholder image for Python logo"
                       class="f-logo-image">
               </div>
           </div>
@@ -234,6 +233,21 @@
     </section>
   </div>
 
+  <footer class="footer" id="footer">
+    <div class="footer-content">
+        <div class="footer-social-links">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <p>&copy; 2024 Vodafone. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+
+
  
 
   <script>
@@ -247,6 +261,22 @@
       navbar.classList.remove('scrolled');
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll(".f-logo-image");
+    let currentIndex = 0;
+    function animateImages() {
+        images[currentIndex].classList.add("animate-image");
+        setTimeout(() => {
+            images[currentIndex].classList.remove("animate-image");
+            currentIndex = (currentIndex + 1) % images.length;
+            animateImages();
+        },500);
+    }
+
+    animateImages();
+  });
+  
   </script>
 
 </body>

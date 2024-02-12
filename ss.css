@@ -89,7 +89,7 @@ body{
     position: sticky;
     top: 0;
     left: 0;
-    width: 98vw;
+    /* width: 98vw; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,7 +167,6 @@ body{
   font-weight: bold;
   font-size: 16px; 
   white-space: nowrap;
-
   transition: all 0.1s;
 }
 
@@ -322,13 +321,24 @@ body{
   width: calc(33.3333% - 2rem); 
   margin: 1rem;
   text-align: center;
-  display: inline-block; /
+  display: inline-block;
+  
 }
 .f-logo-image {
   width: 50px; 
   display: block;
   margin: 0 auto;
+  transition: transform 1.3s ease;
 }
+
+/* .f-logo-image:hover {
+  transform: scale(1.25); 
+  transition: transform 0.3s ease; 
+} */
+.animate-image {
+  transform: scale(1.40);
+}
+
 .f-logo-title {
   margin-top: 0.5rem;
 }
@@ -362,14 +372,68 @@ body{
   margin-bottom: 1.5rem;
 }
 .custom-button {
-  background-color: #1e40af00;
+  border-radius:6px; 
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid #ffffff;;
   color: #c4c4c4;;
-  padding: 0.5rem 1rem;
-  border-radius: 3.25rem;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.8s ease;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 16px; 
+  white-space: nowrap;
+  transition: all 0.1s;
 }
 .custom-button:hover {
-  background-color: #3e4047;
+    /* border-color: #eb0000;  */
+    background-color: #eb0000;
+    color: #ffffff; 
+    transition: all 0.1s; 
+}
+
+
+/* ///////////////////////////Footer////////////////////// */
+.footer {
+  background-color: #1b1515ec;
+  color: #c4c4c4;
+  padding: 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav-links a,
+.footer-social-links a {
+  margin: 0 10px;
+  color: #c4c4c4;
+  text-decoration: none;
+}
+.footer-social-links a:hover {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-legal {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.footer-legal a {
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none;
+  color: #c4c4c4;
+}
+.footer-legal a:hover {
+  scale: ;
+  color: #ffffff;
 }
