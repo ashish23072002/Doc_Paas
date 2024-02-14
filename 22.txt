@@ -1,0 +1,250 @@
+import logo from '@/assets/images/logo.svg';
+import animation from '@/assets/images/animation.gif';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+function Documentation() {
+  const navigate = useNavigate();
+
+  const docs = [
+    {
+      title: 'GETTING STARTED',
+      content: [
+        {
+          heading: 'Quick Start',
+          content:
+            'Quick Start: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti voluptatem architecto doloremque qui maxime quos excepturi, rerum facilis est sequi eum deserunt nisi quas molestias ad inventore nam non rem quia veniam fuga! Molestiae, repudiandae quas sequi maxime voluptatum, cumque unde deserunt incidunt aut sed nam rem ea animi obcaecati repellat illum culpa. Ea sequi saepe quisquam rerum vitae minus praesentium quae doloribus esse a magni libero, repellat dolores aut odio tenetur reiciendis aspernatur tempore sit at labore illo ipsam eaque. Molestias, asperiores? Ratione rerum sapiente veniam eos odit eum reiciendis doloremque velit. Perferendis vel culpa enim doloribus quis tenetur.'
+        },
+        {
+          heading: 'Project',
+          content: [
+            {
+              heading: 'Create Prject',
+              content:
+                'Create Prject: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti voluptatem architecto doloremque qui maxime quos excepturi, rerum facilis est sequi eum deserunt nisi quas molestias ad inventore nam non rem quia veniam fuga! Molestiae, repudiandae quas sequi maxime voluptatum, cumque unde deserunt incidunt aut sed nam rem ea animi obcaecati repellat illum culpa. Ea sequi saepe quisquam rerum vitae minus praesentium quae doloribus esse a magni libero, repellat dolores aut odio tenetur reiciendis aspernatur tempore sit at labore illo ipsam eaque. Molestias, asperiores? Ratione rerum sapiente veniam eos odit eum reiciendis doloremque velit. Perferendis vel culpa enim doloribus quis tenetur.'
+            },
+            {
+              heading: 'Subscribe Project',
+              content:
+                'Subscribe Project: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti voluptatem architecto doloremque qui maxime quos excepturi, rerum facilis est sequi eum deserunt nisi quas molestias ad inventore nam non rem quia veniam fuga! Molestiae, repudiandae quas sequi maxime voluptatum, cumque unde deserunt incidunt aut sed nam rem ea animi obcaecati repellat illum culpa. Ea sequi saepe quisquam rerum vitae minus praesentium quae doloribus esse a magni libero, repellat dolores aut odio tenetur reiciendis aspernatur tempore sit at labore illo ipsam eaque. Molestias, asperiores? Ratione rerum sapiente veniam eos odit eum reiciendis doloremque velit. Perferendis vel culpa enim doloribus quis tenetur.'
+            }
+          ]
+        },
+        {
+          heading: 'Workspace',
+          content:
+            'Workspace Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti voluptatem architecto doloremque qui maxime quos excepturi, rerum facilis est sequi eum deserunt nisi quas molestias ad inventore nam non rem quia veniam fuga! Molestiae, repudiandae quas sequi maxime voluptatum, cumque unde deserunt incidunt aut sed nam rem ea animi obcaecati repellat illum culpa. Ea sequi saepe quisquam rerum vitae minus praesentium quae doloribus esse a magni libero, repellat dolores aut odio tenetur reiciendis aspernatur tempore sit at labore illo ipsam eaque. Molestias, asperiores? Ratione rerum sapiente veniam eos odit eum reiciendis doloremque velit. Perferendis vel culpa enim doloribus quis tenetur.'
+        }
+      ]
+    }
+  ];
+  const [focusedHeading, setFocusedHeading] = useState<string>(docs[0].content[0].heading || '');
+  const [focusedContent, setFocusedContent] = useState<string>((docs[0].content[0].content as string) || '');
+
+  function openDrodown(event) {
+    event.target?.lastChild?.classList?.toggle('d-block');
+  }
+
+  function changeContent(heading: string, content: string): void {
+    setFocusedHeading(heading);
+    setFocusedContent(content);
+  }
+
+  return (
+    <>
+      <nav className="navbar box-shadow" id="navbar">
+        <div style={{ alignItems: 'center', display: 'flex', gap: '20px' }}>
+          <Link to="/" className="logo">
+            <img src={logo} className="logo-img" alt="logo" />
+          </Link>
+          <div className="nav-links">
+            <Link to="/">Introduction</Link>
+            <Link to="/">Popular Framework</Link>
+          </div>
+        </div>
+
+        <div className="user-actions">
+          <button className="sign-up-btn" type="button" onClick={() => navigate('/auth/login')}>
+            Sign in
+          </button>
+        </div>
+      </nav>
+
+      <div className="docs container-fluid position-relative">
+        <div className="docs-sidebar box-shadow rounded py-3">
+          <>
+            <h6 className="heading">Getting Started</h6>
+            <>
+              <div className="sidebar-devider"></div>
+              <div className="sidebar-item">SignUp</div>
+              <div className="sidebar-item" onClick={openDrodown}>
+                <span className="d-flex justify-content-between" style={{ pointerEvents: 'none' }}>
+                  <span>Project</span>
+                  <i className="bi bi-chevron-down"></i>
+                </span>
+                <div className="subitems">
+                  <div className="sidebar-subitem">Create Project</div>
+                  <div className="sidebar-subitem">Sub Project</div>
+                </div>
+              </div>
+              <div className="sidebar-item" onClick={openDrodown}>
+                <span className="d-flex justify-content-between" style={{ pointerEvents: 'none' }}>
+                  <span>Image Build</span>
+                  <i className="bi bi-chevron-down"></i>
+                </span>
+                <div className="subitems">
+                  <div className="sidebar-subitem">Custom workspace</div>
+                  <div className="sidebar-subitem">Pre-requisites for image</div>
+                  <div className="sidebar-subitem">How it's operate</div>
+                </div>
+              </div>
+              <div className="sidebar-item" onClick={openDrodown}>
+                <span className="d-flex justify-content-between" style={{ pointerEvents: 'none' }}>
+                  <span>Template Microservice </span>
+                  <i className="bi bi-chevron-down"></i>
+                </span>
+                <div className="subitems">
+                  <div className="sidebar-subitem">Starter Template </div>
+                  <div className="sidebar-subitem">Create Template </div>
+                </div>
+              </div>
+              <div className="sidebar-item" onClick={openDrodown}>
+                <span className="d-flex justify-content-between" style={{ pointerEvents: 'none' }}>
+                  <span>Workspace Microservice </span>
+                  <i className="bi bi-chevron-down"></i>
+                </span>
+                <div className="subitems">
+                  <div className="sidebar-subitem">Creating workspaces  </div>
+                  <div className="sidebar-subitem">Updating workspaces  </div>
+                  <div className="sidebar-subitem">Workspace consumption   </div>
+                </div>
+              </div>
+            </>
+          </>
+        </div>
+        <div className="row docs-contnent pe-4" style={{ paddingLeft: '320px' }}>
+          <div className="col-12 box-shadow rounded p-5" style={{ minHeight: '85vh' }}>
+            <div style={{ paddingBottom: '30px' }}>
+              <h3 style={{}}>Sign Up:</h3>
+              <p style={{ color: 'grey', paddingBottom: '25px' }}>
+                Sign Up: Begin by registering yourself using your Vodafone email address.
+              </p>
+              <h4 style={{}}>Confirmation Email:</h4>
+              <p style={{ color: 'grey', paddingBottom: '25px' }}>
+                Upon completing the signup process, you will receive a confirmation email containing your login
+                credentials to your respective email inbox.
+              </p>
+              <h4 style={{}}>Sign In:</h4>
+              <p style={{ color: 'grey', paddingBottom: '25px' }}>
+                Access your account by signing in with the provided credentials.
+              </p>
+            </div>
+            {/* ////////////////////////////////////////////////////////////////////// */}
+            <h3>Getting Started With Project </h3>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              Project is a collection of Templates (foundational infrastructure for workspace), Images (snapshot of
+              workspace), Workspaces (Container/VDI where IDE will be deployed), Users. Resources within the project are
+              completely isolated from other projects, meaning they cannot be directly accessed or modified by users in
+              other projects.
+            </p>
+            {/* ////////////////////////////////////////////////////// */}
+            <h4>2.1 Project Description: </h4>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              Give your project a concise and descriptive title that captures its essence. Briefly outline the main
+              goals you aim to achieve with this project along with the key features, functionalities, and deliverables
+              of the project.
+            </p>
+            {/* ////////////////////////////////////////////////////// */}
+            <h4>2.2 Roles: </h4>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              The specific roles in a project can vary greatly depending on the complexity. The below mentioned roles
+              define what each person is expected to do and how they contribute to the overall project.
+            </p>
+            <img src={animation} alt="animation" style={{ width: '50%', height: '20rem', alignItems: 'center' }} />
+            {/* ////////////////////////////////////////////////////// */}
+            <h4>2.2.1. DevOps: </h4>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              Upon registration, VCollab automatically assigns the DevOps role to users. The person with DevOps role
+              assigned holds the power to establish new workspaces within the project. DevOps users can consume the
+              resources (custom templates and images) to create their workspace. They have the authority to perform
+              essential actions like Reading, Updating and even Deleting resources they provisioned themselves.
+            </p>
+            {/* ////////////////////////////////////////////////////// */}
+            <h4>2.2.2. DevOps Lead: </h4>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              DevOps users must submit a request to obtain DevOps Lead permission. Within a project, users with DevOps
+              Lead role assigned, known as project owners, can perform CRUD operations against all the resources (such
+              as Templates, Workspaces, Custom Images) across the project. DevOps Lead could develop and build custom
+              images for workspaces within their project. Users may be removed from projects by the DevOps Lead to
+              ensure proper access control and project security.
+            </p>
+            {/* ////////////////////////////////////////////////////// */}
+            <h4>2.3. Create Project: </h4>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              By default, the creator of the project would be the project owner. The projects operate independently of
+              each other. Users with DevOps Lead role is entrusted to create projects as per their requirements. To
+              create a project, you must provide below mentioned details. project name (should meet RFC1123
+              requirements) project description
+            </p>
+            {/* ////////////////////////////////////////////////////// */}
+            <h4>2.4. Subscribe Project: </h4>
+            <p style={{ color: 'grey', paddingBottom: '25px' }}>
+              Subscribing to a project typically gains access to all the features and functionalities of the
+              project.Both DevOps and DevOps Lead roles can subscribe to projects.
+            </p>
+            {/* ////////////////////////////////////////////////////// */}
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="docs container-fluid position-relative">
+        <div className="docs-sidebar box-shadow rounded py-3">
+          {docs.map(doc => (
+            <>
+              <h6 className="heading">{doc.title}</h6>
+              {doc.content.map(content => (
+                <>
+                  <div className="sidebar-devider"></div>
+                  {!Array.isArray(content.content) && (
+                    <div
+                      className="sidebar-item"
+                      onClick={() => changeContent(content.heading, content.content as string)}
+                    >
+                      {content.heading}
+                    </div>
+                  )}
+                  {Array.isArray(content.content) && (
+                    <div className="sidebar-item" onClick={openDrodown}>
+                      <span className="d-flex justify-content-between" style={{ pointerEvents: 'none' }}>
+                        <span>{content.heading}</span>
+                        <i className="bi bi-chevron-down"></i>
+                      </span>
+                      <div className="subitems">
+                        {content.content.map(subheading => (
+                          <div
+                            className="sidebar-subitem"
+                            onClick={() => changeContent(subheading.heading, subheading.content)}
+                          >
+                            {subheading.heading}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
+              ))}
+            </>
+          ))}
+        </div>
+        <div className="row docs-contnent pe-4" style={{ paddingLeft: '320px' }}>
+          <div className="col-12 box-shadow rounded p-5" style={{ minHeight: '85vh' }}>
+            <h4>{focusedHeading}</h4>
+            <p>{focusedContent}</p>
+          </div>
+        </div>
+      </div> */}
+    </>
+  );
+}
+
+export default Documentation;
